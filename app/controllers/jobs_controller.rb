@@ -5,7 +5,7 @@ class JobsController < ApplicationController
   end
 
   def index
-    @jobs = Job.all
+    @jobs = Job.where(:is_hidden => false)
   end
 
   def new
@@ -44,15 +44,15 @@ class JobsController < ApplicationController
   end
 
   def require_is_admin
-    unless current_user.admin?
+     if !current_user.admin?
       flash[:alert] = 'You are not admin'
       redirect_to root_path
-    end
+     end
   end
 
   private
 
   def job_params
-    params.require(:job).permit(:title, :description, :wage_upper_bound, :wage_lower_bound, :contact_email)
+    params.require(:job).permit(:title, :description, :wage_upper_bound, :wage_lower_bound, :contact_email, :is_hidden)
   end
 end
