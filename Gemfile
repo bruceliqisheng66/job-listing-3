@@ -56,4 +56,4 @@ group :production do
   gem 'pg'
 end
 
-gem 'will_paginate'
+gem 'ransack'
