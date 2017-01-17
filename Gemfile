@@ -57,3 +57,4 @@ group :production do
 end
 
 gem 'ransack'
+gem 'seo_helper', '~> 1.0'

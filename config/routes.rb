@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  resources :jobs do
+    collection do
+      get :search
+    end
+  end
+
   devise_for :users
 
   resources :jobs do
@@ -16,6 +22,7 @@ Rails.application.routes.draw do
   end
   resources :welcome do
   end
+
   root 'welcome#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

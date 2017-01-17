@@ -1,5 +1,7 @@
 <div class="pull-right">
-  <%= link_to("Add a job", new_job_path, :class => "btn btn-default" ) %>
+
+  <%= link_to("Add a job", new_job_path, :class => "btn btn-primary btn-block" ) %>
+  <br><br><br>
 </div>
 
 <div class="dropdown clearfix pull-right">
@@ -21,6 +23,8 @@
         </li>
     </ul>
 </div>
+
+<%= render :partial => "jobs/search_bar" %>
 
 <table class="table table-boldered">
     <thead>
